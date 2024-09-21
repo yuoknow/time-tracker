@@ -1,0 +1,40 @@
+databaseChangeLog:
+  - changeSet:
+      id: "1671820913"
+      author: azhmylev
+      runOnChange: false
+      changes:
+        - createTable:
+            tableName: users_activity
+            columns:
+              - column:
+                  name: ID
+                  type: uuid
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: VERSION
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: TASK_ID
+                  type: VARCHAR(63)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: USER_ID
+                  type: uuid
+                  constraints:
+                    nullable: false
+              - column:
+                  name: START_TIME
+                  type: TIMESTAMP WITH TIME ZONE
+                  constraints:
+                    nullable: false
+              - column:
+                  name: END_TIME
+                  type: TIMESTAMP WITH TIME ZONE
+                  constraints:
+                    nullable: false
+

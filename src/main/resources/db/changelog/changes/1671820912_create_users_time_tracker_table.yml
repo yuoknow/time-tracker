@@ -1,0 +1,30 @@
+databaseChangeLog:
+  - changeSet:
+      id: "1671820912"
+      author: azhmylev
+      runOnChange: false
+      changes:
+        - createTable:
+            tableName: users_time_tracker
+            columns:
+              - column:
+                  name: USER_ID
+                  type: uuid
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: VERSION
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: TASK_ID
+                  type: VARCHAR(63)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: STARTED_AT
+                  type: TIMESTAMP WITH TIME ZONE
+                  constraints:
+                    nullable: false
+
